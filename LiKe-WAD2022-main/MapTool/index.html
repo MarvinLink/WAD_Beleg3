@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    </head>
+    <body class="body">
+        <div id="login">
+            <div class="loginstylecontainer1">
+                <div class="loginstylecontainer2">
+                    <h1>Login Map</h1>
+                    <form id="loginform">
+		                <label for="username"><b>Username: </b></label>
+		                <input type="text" placeholder="Enter UserId" id="loginname" name="username" required>
+
+			            <label for="password"><b>Password: </b></label>
+			            <input type="password" placeholder="Enter Password" id="loginpw" name="password" required>
+
+			            <button type="button" id="submitButton" onclick="login(loginuser)">Login</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+        <!--<header id="header">
+            <h2 id="greeting"></h2>
+        </header>-->
+        <div id="main">
+            <div id ="topnav">
+                
+                <div id="topnav2">
+                    <h2 id="greeting"></h2>
+                    <button type="button" id="ShowAllButton">Show all contacts</button>
+                    <button type="button" id="ShowMyButton">Show my contacts</button>
+                    <button type="button" id="AddButton">Add Contact</button>
+                    <button type="button" id="LogoutButton">Logout</button>
+                </div>
+            </div>
+            <div id="sidenav">
+                <div id="contacts" onclick="funccon()">
+
+                </div>
+            </div>
+            <div id = "map">
+                <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+                
+            </div>
+        </div>
+        
+        <div id="addcontact" class="screenadup">
+            <main class="addmain">
+                <h1 class="public1">Add Contact</h1>
+                <br>
+                <br>
+                <img class="image1" src="images/images.jpg">
+                <br>
+                <br>
+            </main>
+        <aside  class="aside1">
+            <h1  class="public1">Contact information</h1>
+            <form action="process.php">
+                <input type="text" id="addfn" name="first name" placeholder="first name" required>
+            </form>
+            <br>
+            <form action="process.php">
+                <input type="text" id="addln" name="last name" placeholder="last name" required>
+            </form>
+            <br>
+            <form action="process.php">
+                <input type="text" id="addstreet" name="street & number" placeholder="street & number" required>
+            </form>
+            <br>
+            <form action="process.php">
+                <input type="text" id="addzip" name="zip" placeholder="zip" required>
+            </form>
+            <br>
+            <form action="process.php">
+                <input type="text" id="addcity" name="city" placeholder="city" required>
+            </form>
+            <br>
+            <form action="process.php">
+                <input type="text" id="addcountry" name="country" placeholder="country">
+            </form>
+            <br>
+            <form action="process.php">
+                <input type="text" id="addphone" name="phone" placeholder="phone">
+            </form>
+            <br>
+            <form action="process.php">
+                <input type="date" id="addbirth" name="date of birth" placeholder="date of birth">
+            </form>
+            <br>
+            <form action="prozess.php">
+                <label id="public" for="public">Public</label>
+                <input type="checkbox" id="addvis" name="public" placeholder="public" value="false">
+            </form>
+            <br>
+            <button type="button" id="addbtn2" onclick="funcadd()">Add</button>
+        </aside>
+        </div>
+
+        <div id="updatecontact" class="screenadup">
+            <main id="updatemain">
+                <h1 id="UpdateDelete">Update & Delete</h1>
+                <br>
+                <br>
+                <img class="image1" src="images/images.jpg">
+                <br>
+                <br>
+    
+            
+               
+            <aside class="aside1">
+                <h1 class="public1">Contact information</h1>
+                <form action="process.php">
+                    <input type="text" name="first name" placeholder="first name" required>
+                </form>
+                <br>
+                <form action="process.php">
+                    <input type="text" name="last name" placeholder="last name" required>
+                </form>
+                <br>
+                <form action="process.php">
+                    <input type="text" name="street & number" placeholder="street & number" required>
+                </form>
+                <br>
+                <form action="process.php">
+                    <input type="text" name="zip" placeholder="zip"required>
+                </form>
+                <br>
+                <form action="process.php">
+                    <input type="text" name="city" placeholder="city"required>
+                </form>
+                <br>
+                <form action="process.php">
+                    <input type="text" name="country" placeholder="country">
+                </form>
+                <br>
+                <form action="process.php">
+                    <input type="text" name="phone" placeholder="phone">
+                </form>
+                <br>
+                <form action="process.php">
+                    <input type="date" name="date of birth" placeholder="date of birth">
+                </form>
+                <br>
+                <form action="prozess.php">
+                    <label id="public" for="public">Public</label>
+                    <input type="checkbox" name="public" placeholder="public" value="false" >
+                </form>
+                <br>
+                <button id="update" type="button" onclick="funcupdate()">Update</button>
+                <br>
+                <br>
+                <button id="delete" type="button" onclick="funcupdate()">Delete</button>
+        </aside>
+        </div>
+    </body>
+    <script src="scripts.js"></script>
+</html>
