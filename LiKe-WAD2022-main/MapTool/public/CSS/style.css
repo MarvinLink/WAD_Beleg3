@@ -1,0 +1,263 @@
+
+.body{
+    background-image: url("../images/hintergr.jpg")
+}
+
+#login{
+    display:block;
+}
+
+.loginstylecontainer1{
+    display:table;
+    height:100%;
+    margin: 0 auto;
+    text-align:center
+}
+
+.loginstylecontainer2{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.loginstylecontainer2 #loginform{
+    background:#ddd;
+    border:1px solid #eee;
+    padding:10px; 
+    width:300px;  /*  your login form width */
+}
+
+#submitButton {
+    background-color: #e2a41f;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+}
+
+input[type=text], input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block; 
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+#main{
+    display:none;
+}
+
+#header{
+
+}
+
+#sidenav{
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(51, 48, 48);
+    overflow-x: hidden;
+    display: table;
+    align-items: center;
+}
+
+#selecter{
+    margin-top: 50%;
+}
+
+
+#topnav{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+#topnav2{
+    overflow: hidden;
+    background-color: rgb(51, 48, 48);
+    height: 100px;
+    width: 1720px;
+    margin-left: 190px;
+    padding-top: 0%;
+    text-align: center;
+    display: flex;
+}
+
+#contacts{
+    background-color: #e2a41f;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    border: 1px rgb(0, 0, 0);
+    width: 90%;
+    height: 5%;
+    display: table;
+}
+
+#ShowAllButton, #ShowMyButton, #AddButton, #LogoutButton,#greeting{
+    background-color: #e2a41f;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    border: 1px  black;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 10%;
+    height: 50%;
+    
+}
+
+#contacttitle{
+    background-color: #e23c1f;
+    color:rgb(255, 255, 255);
+    text-align: center;
+    border: 1px rgb(0, 0, 0);
+    width: 90%;
+    height: 5%;
+    display: block;
+    top: 110px;
+}
+
+#map{
+    width: 1720px; 
+    height: 980px;
+    margin-left: 190px;
+    position: fixed;
+    z-index: 0;	
+}
+
+
+
+/*.addaside{
+    position:absolute;
+    margin-left: 50%;
+    top: 20%;
+    width: 50%;
+}
+.addmain{
+    position:absolute;
+    
+    top: 20%;
+    left: 10%;
+    width: 40%
+}*/
+
+#updatecontact{
+    display: none;
+    position:absolute;
+    top: 20%;
+    left: 10%;
+}
+.Contactinformation2{
+    font-family: Helvetica, Arial, sans-serif;
+   
+}
+
+.image2{
+    border-radius: 50%;
+  
+}
+.aside2{
+    position:absolute;
+    /*margin-left: 50%;*/
+    top: 20%;
+    width:50%;
+}
+#addcontact{
+    display: none;
+    position:absolute;
+    top: 20%;
+    left: 10%;
+    /*width: 40%*/
+    
+    
+}
+.public2{
+    font-family: Helvetica, Arial, sans-serif;
+}
+.footer2{
+    position: absolute;
+    font-family: Helvetica, Arial, sans-serif;
+    
+    top: 75%;
+    left: 10%;
+}
+.container1{
+    position:absolute;
+    margin-top: 30%;
+    height:  100vw;
+    width: 100vw;
+    
+}
+
+
+*{
+    padding: 0;
+    margin:0;
+  
+}
+.AddContact1{
+    font-family: Helvetica, Arial, sans-serif;
+   display: none;
+    
+}
+.Contactinformation1{
+    font-family: Helvetica, Arial, sans-serif;
+   
+}
+.image1{
+    border-radius: 50%;
+
+}
+.aside1{
+    position:absolute;
+    margin-left: 35vw;
+    top: 5vw;
+    width: 50vw;
+}
+ 
+
+.add1{
+    position: center;
+}
+#addmain{
+    position:absolute;
+    top: 5vw;
+    left: 5vw;
+    width: 50vw;
+}
+#updatemain{
+    position:absolute;
+    top: 5vw;
+    left: 5vw;
+    width: 50vw;
+}
+
+.AddContact1{
+    position:absolute;
+    
+    top: 20%;
+    left: 10%;
+    width: 40%
+}
+.public1{
+    font-family: Helvetica, Arial, sans-serif;
+}
+.footer1{
+    position: absolute;
+    font-family: Helvetica, Arial, sans-serif;
+ 
+    top: 45%;
+    left: 10%;
+}
+.container1{
+    position:absolute;
+    margin-top: 0%;
+    height:  100vw;
+    width: 100vw;
+    
+}

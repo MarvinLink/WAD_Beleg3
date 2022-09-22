@@ -1,0 +1,8 @@
+db.contacts.insertMany(
+    [ 
+        {firstname: "Karsten",lastname:"Müller", StreetAndNumber: "Prenzlauer Allee 196", zip:"10405", city:"Berlin", owner: "admina", vis: "0"},
+        {firstname: "Tobias",lastname:"Meier", StreetAndNumber:"Schönhauser Allee 142", zip: "10437", city:"Berlin", owner: "admina", vis: "1"}, 
+        {firstname: "Marie", lastname:"Schneider", StreetAndNumber:"Landsberger Allee 153" , zip: "10369", city:"Berlin", owner: "normalo", vis: "0"}, 
+        {firstname: "Miriam", lastname:"Schuster", StreetAndNumber:"Berliner Allee 225", zip: "13088", city:"Berlin", owner: "normalo", vis: "1"}
+    ]
+)
