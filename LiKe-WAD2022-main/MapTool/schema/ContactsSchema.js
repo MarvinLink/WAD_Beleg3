@@ -40,8 +40,8 @@ const ContactsSchema = mongoose.Schema({
     },
     vis:{
         type: Boolean,
-        required : false,
-        default: false
+        required : true
+        
     },
     
 

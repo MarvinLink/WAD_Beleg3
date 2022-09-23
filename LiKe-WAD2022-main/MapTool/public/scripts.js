@@ -111,7 +111,7 @@ MongoClient.connect (mongourl, function (err, client) {
 */
 
 async function funcupdate(){
-    console.log(contactname);
+    console.log(accu);
     
     const contactjson = JSON.stringify({
         firstname: document.getElementById("firstname").value,
@@ -123,6 +123,7 @@ async function funcupdate(){
         phone:document.getElementById("phone").value,
         dateOfBirth:document.getElementById("dateOfBirth").value,
         owner: accu,
+        vis: document.getElementById("publicOrPrivate").value
     });
     console.log(contactjson);
     updatediv.style.display ='none';
@@ -142,12 +143,16 @@ async function funcupdate(){
     }).then((res)=> res.json())
     .then((data)=> console.log(data))
     .catch((error)=> console.log(error));
+    //await showcontacts(accu, visset);
+    console.log(contactname);
+    console.log(nameMarkerMap.get(contactname));
     await map.removeLayer(nameMarkerMap.get(contactname));
     //map.removeLayer(nameMarkerMap.get(contactname));
     
     
     putContactsArray();
-    showcontacts(accu, visset);
+    //await showcontacts(accu, visset);
+    showMyBtnfun();
     
     
     maindiv.style.display = 'block'
@@ -172,10 +177,15 @@ async function funcdelete(){
         
     })
     .catch((error)=> console.log(error));
+    
+    //await showcontacts(accu, visset);
+    console.log(contactname);
+    console.log(nameMarkerMap.keys.toString);
     await map.removeLayer(nameMarkerMap.get(contactname));
     //map.removeLayer(nameMarkerMap.get(contactname));
     putContactsArray();
-    showcontacts(accu, visset);
+    //await showcontacts(accu, visset);
+    showMyBtnfun();
     maindiv.style.display = 'block'
     
     
@@ -209,6 +219,7 @@ async function loadContactsArray(){
     const response = await fetch("http://localhost:3000/contacts");
     const contacts = await response.json();
     console.log(contacts);
+    
     return contacts;
     
 }
@@ -247,6 +258,8 @@ async function putContactsArray(){
 };
 
 
+
+
 function login(loginuser){
     logindiv.style.display = 'none';
     maindiv.style.display = 'block';
@@ -277,8 +290,10 @@ async function showcontacts(owner, vis){
             //console.log(kontaktarr);
             //console.log(kontaktarr[9][i].username);
             //console.log(kontaktarr[8][i]);
-            if(owner["username"] === kontaktarr2[9][i].username){
+            
+            if(owner["username"] === kontaktarr2[9][i].username){ //alle angezeigt die von dem user sind
                 console.log(kontaktarr2[0][i]);
+                console.log(kontaktarr2[9][i].username);
                 //console.log("zeige meine Kontakte")
                 //console.log(owner["username"])
                 //anzeige = anzeige +"<option id='option'"+i+" onclick='funccon("+ kontaktarr[0][i] +")' value='"+kontaktarr[0][i]+"'>"+ kontaktarr[0][i]+"</option>";
@@ -324,7 +339,7 @@ async function showcontacts(owner, vis){
                     }();   
                     */
                     
-                    !async function (){
+                    !async function setMarker(){
                             
                         let data = await fetch(`${url2}${queryString}`,requestOptions)
                         .then((response)=>{
@@ -346,9 +361,13 @@ async function showcontacts(owner, vis){
                         })//.then(object =>{ return object})
                         .catch((err)=>console.log("err:" + err));
                         console.log(data);
-                        for(i= 0; i<data.length; i++){
+                        for(j= 0; j<data.length; j++){
                             //console.log("lat: " + data[i].lat +" lon: " + data[i].lon);
-                            nameMarkerMap.set(kontaktarr2[0][i], L.marker([data[i].lat,data[i].lon]).addTo(map));
+                            console.log(kontaktarr2[0][i]);
+                            const marker = L.marker([data[j].lat,data[j].lon])
+                            console.log(marker);
+                            nameMarkerMap.set(kontaktarr2[0][i], marker);
+                            marker.addTo(map);
                             /*console.log(nameMarkerMap.has(kontaktarr2[0][i])===false)
                             if(nameMarkerMap.has(kontaktarr2[0][i])===false){
                                 nameMarkerMap.get(kontaktarr2[0][i]).addTo(map);
@@ -418,9 +437,13 @@ async function showcontacts(owner, vis){
                         })//.then(object =>{ return object})
                         .catch((err)=>console.log("err:" + err));
                         console.log(data);
-                        for(i= 0; i<data.length; i++){
+                        for(j= 0; j<data.length; j++){
                             //console.log("lat: " + data[i].lat +" lon: " + data[i].lon);
-                            nameMarkerMap.set(kontaktarr2[0][i], L.marker([data[i].lat,data[i].lon]).addTo(map));
+                            console.log(kontaktarr2[0][i]);
+                            const marker = L.marker([data[j].lat,data[j].lon])
+                            console.log(marker);
+                            nameMarkerMap.set(kontaktarr2[0][i], marker);
+                            marker.addTo(map);
                             /*console.log(nameMarkerMap.has(kontaktarr2[0][i])===false);
                             if(nameMarkerMap.has(kontaktarr2[0][i])===false){
                                 nameMarkerMap.get(kontaktarr2[0][i]).addTo(map);
@@ -527,9 +550,13 @@ async function showcontacts(owner, vis){
                         //.then(object =>{ return object})
                         .catch((err)=>console.log("err:" + err));
                         console.log(data);
-                        for(i= 0; i<data.length; i++){
+                        for(j= 0; j<data.length; j++){
                             //console.log("lat: " + data[i].lat +" lon: " + data[i].lon);
-                            nameMarkerMap.set(kontaktarr2[0][i], L.marker([data[i].lat,data[i].lon]).addTo(map));
+                            console.log(kontaktarr2[0][i]);
+                            const marker = L.marker([data[j].lat,data[j].lon])
+                            console.log(marker);
+                            nameMarkerMap.set(kontaktarr2[0][i], marker);
+                            marker.addTo(map);
                             /*console.log(nameMarkerMap.has(kontaktarr2[0][i])===false);
                             if(nameMarkerMap.has(kontaktarr2[0][i]=== false)){
                                 nameMarkerMap.get(kontaktarr2[0][i]).addTo(map);
@@ -870,7 +897,8 @@ showAllbtn.addEventListener('click', async () =>{
     showcontacts(accu, true);
     visset= true;
 })
-showMybtn.addEventListener('click', async () =>{
+
+async function showMyBtnfun() {
     /*console.log(nameMarkerMap.values.toGeoJSON()) 
     markers = L.layerGroup(await nameMarkerMap.values);
     markers.clearLayers();
@@ -883,7 +911,8 @@ showMybtn.addEventListener('click', async () =>{
     putContactsArray();
     showcontacts(accu, false);
     visset= false;
-})
+};
+showMybtn.addEventListener('click', showMyBtnfun());
 
 addbtn.addEventListener('click', () =>{
         maindiv.style.display ='none';

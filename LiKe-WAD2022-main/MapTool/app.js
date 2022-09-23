@@ -46,7 +46,7 @@ app.get("/", (req, res)=>{
     res.render("index");
 });
 
-mongoose.connect("mongodb://localhost:27017/adviz", ()=> {
+mongoose.connect("mongodb://localhost:27017/advizDB", ()=> {
     console.log("Connected to DB")
 })
 
